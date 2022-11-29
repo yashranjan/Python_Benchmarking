@@ -26,8 +26,8 @@ def main():
     pat = r'[a-zA-Z0-9, ]+: [0-9]*.[0-9]*'
     timeit_tmp = 'python3.{ver} -m timeit -n {loop} -r {repeat} --unit={unit}'
 
-    code1 = '''{} "import xml.etree.ElementTree as ET;tree = ET.parse('books.xml');"'''.format(timeit_tmp)
-    code2 = '''{} "import xml.etree.ElementTree as ET;tree = ET.parse('mega.xml');"'''.format(timeit_tmp)
+    code1 = "import xml.etree.ElementTree as ET;tree = ET.parse('books.xml');"
+    code2 = "import xml.etree.ElementTree as ET;tree = ET.parse('mega.xml');"
 
     data_dict = {
         'test_1':DataPoint(code1),
@@ -36,6 +36,7 @@ def main():
 
     for test, test_data in data_dict.items():
         code = test_data.code
+        code = '{} "{}"'.format(timeit_tmp, code)
         for ver in ['6', '8', '9', '10', '11']:
             py_ver = 'Py3.{}'.format(ver)
             ver_code = code.format(ver=ver, loop=loop, repeat=repeat, unit=unit)
