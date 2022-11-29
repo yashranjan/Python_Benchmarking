@@ -1,0 +1,15 @@
+For TestCode: python3.{ver} -m timeit -n {loop} -r {repeat} --unit={unit} "import xml.etree.ElementTree as ET;tree = ET.parse('books.xml');"
+ 0. Py3.6=> Loops:1, Rep:1, Time per loop:0.00203 sec
+1. Py3.8=> Loops:1, Rep:1, Time per loop:0.00275 sec
+2. Py3.9=> Loops:1, Rep:1, Time per loop:0.00256 sec
+3. Py3.10=> Loops:1, Rep:1, Time per loop:0.00433 sec
+4. Py3.11=> Loops:1, Rep:1, Time per loop:0.00331 sec
+
+For TestCode: python3.{ver} -m timeit -n {loop} -r {repeat} --unit={unit} "import xml.etree.ElementTree as ET;tree = ET.parse('mega.xml');"
+ 0. Py3.6=> Loops:1, Rep:1, Time per loop:1.7 sec
+1. Py3.8=> Loops:1, Rep:1, Time per loop:1.61 sec
+2. Py3.9=> Loops:1, Rep:1, Time per loop:1.62 sec
+3. Py3.10=> Loops:1, Rep:1, Time per loop:1.79 sec
+4. Py3.11=> Loops:1, Rep:1, Time per loop:1.68 sec
+
+Total Time Elapsed in main: 9.520859479904175s
