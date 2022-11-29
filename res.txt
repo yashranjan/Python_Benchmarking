@@ -1,15 +1,15 @@
 For TestCode: python3.{ver} -m timeit -n {loop} -r {repeat} --unit={unit} "import xml.etree.ElementTree as ET;tree = ET.parse('books.xml');"
- 0. Py3.6=> Loops:1, Rep:1, Time per loop:0.00203 sec
-1. Py3.8=> Loops:1, Rep:1, Time per loop:0.00291 sec
-2. Py3.9=> Loops:1, Rep:1, Time per loop:0.00248 sec
-3. Py3.10=> Loops:1, Rep:1, Time per loop:0.00448 sec
-4. Py3.11=> Loops:1, Rep:1, Time per loop:0.00343 sec
+ 0. Py3.6=> Loops:1, Rep:1, Time per loop:0.00212 sec
+1. Py3.8=> Loops:1, Rep:1, Time per loop:0.00284 sec
+2. Py3.9=> Loops:1, Rep:1, Time per loop:0.00267 sec
+3. Py3.10=> Loops:1, Rep:1, Time per loop:0.0047 sec
+4. Py3.11=> Loops:1, Rep:1, Time per loop:0.00356 sec
 
 For TestCode: python3.{ver} -m timeit -n {loop} -r {repeat} --unit={unit} "import xml.etree.ElementTree as ET;tree = ET.parse('mega.xml');"
- 0. Py3.6=> Loops:1, Rep:1, Time per loop:1.68 sec
+ 0. Py3.6=> Loops:1, Rep:1, Time per loop:1.7 sec
 1. Py3.8=> Loops:1, Rep:1, Time per loop:1.62 sec
-2. Py3.9=> Loops:1, Rep:1, Time per loop:1.63 sec
-3. Py3.10=> Loops:1, Rep:1, Time per loop:1.79 sec
-4. Py3.11=> Loops:1, Rep:1, Time per loop:1.65 sec
+2. Py3.9=> Loops:1, Rep:1, Time per loop:1.62 sec
+3. Py3.10=> Loops:1, Rep:1, Time per loop:1.78 sec
+4. Py3.11=> Loops:1, Rep:1, Time per loop:1.67 sec
 
-Total Time Elapsed in main: 9.464961528778076s
+Total Time Elapsed in main: 9.501960515975952s
