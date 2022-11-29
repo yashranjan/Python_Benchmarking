@@ -8,4 +8,4 @@ test:
 	$(MAKE) gen_res && \
 	git add res.txt && \
 	git commit -m "Update res.txt as of $(CURR_DATETIME)" && \
-	git push origin main
+	git push origin master
