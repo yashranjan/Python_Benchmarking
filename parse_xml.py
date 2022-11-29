@@ -1,6 +1,8 @@
 import subprocess
 import re
-loop, repeat, unit = 100, 100, 'msec'
+import time
+
+loop, repeat, unit = 1, 1, 'sec'
 
 class Point:
     def __init__(self, py='3.6', loop=0, repeat=0, time=0.0) -> None:
@@ -18,13 +20,14 @@ class DataPoint:
         self.py_data.append(Point(py, loop, repeat, time))
     
     def __repr__(self) -> str:
-        return 'For TestCode: {}\n {}\n'.format(self.code, '\n'.join(['{idx}. {i.py}=> Loops:{i.loop}, Rep:{i.repeat}, Time per loop:{i.time}{unit}'.format(idx=idx, i=i, unit=unit) for idx, i in enumerate(self.py_data)]))
+        return 'For TestCode: {}\n {}\n'.format(self.code, '\n'.join(['{idx}. {i.py}=> Loops:{i.loop}, Rep:{i.repeat}, Time per loop:{i.time} {unit}'.format(idx=idx, i=i, unit=unit) for idx, i in enumerate(self.py_data)]))
 
 def main():
     pat = r'[a-zA-Z0-9, ]+: [0-9]*.[0-9]*'
-    
-    code1 = '''python3.{ver} -m timeit -n {loop} -r {repeat} -u {unit} "import xml.etree.ElementTree as ET;tree = ET.parse('books.xml');"'''
-    code2 = '''python3.{ver} -m timeit -n {loop} -r {repeat} -u {unit} "import xml.etree.ElementTree as ET;tree = ET.parse('mega.xml');"'''
+    timeit_tmp = 'python3.{ver} -m timeit -n {loop} -r {repeat} --unit={unit}'
+
+    code1 = '''{} "import xml.etree.ElementTree as ET;tree = ET.parse('books.xml');"'''.format(timeit_tmp)
+    code2 = '''{} "import xml.etree.ElementTree as ET;tree = ET.parse('mega.xml');"'''.format(timeit_tmp)
 
     data_dict = {
         'test_1':DataPoint(code1),
@@ -51,4 +54,6 @@ def main():
 
 
 if __name__ == '__main__':
+    st = time.time()
     main()
+    print('Total Time Elapsed in main: {}s'.format(time.time() - st))
