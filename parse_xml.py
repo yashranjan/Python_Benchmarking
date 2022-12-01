@@ -2,6 +2,7 @@ import subprocess
 import re
 import time
 
+pat = r'[a-zA-Z0-9, ]+: [0-9]*.[0-9]*'
 loop, repeat, unit = 1, 1, 'sec'
 
 class Point:
@@ -22,8 +23,16 @@ class DataPoint:
     def __repr__(self) -> str:
         return 'For TestCode: {}\n {}\n'.format(self.code, '\n'.join(['{idx}. {i.py}=> Loops:{i.loop}, Rep:{i.repeat}, Time per loop:{i.time} {unit}'.format(idx=idx, i=i, unit=unit) for idx, i in enumerate(self.py_data)]))
 
+def test_func(ver_code, py_ver, test_data):
+    res = subprocess.check_output(ver_code, shell=True)
+    res = res.decode('utf-8')
+    pat_res = re.findall(pat, res)
+    if pat_res:
+        time = pat_res[0].split(': ')[1]
+        test_data.addPoint(py_ver, loop, repeat, time)
+
 def main():
-    pat = r'[a-zA-Z0-9, ]+: [0-9]*.[0-9]*'
+
     timeit_tmp = 'python3.{ver} -m timeit -n {loop} -r {repeat} --unit={unit}'
 
     code1 = "import xml.etree.ElementTree as ET;tree = ET.parse('books.xml');"
@@ -40,15 +49,7 @@ def main():
         for ver in ['6', '8', '9', '10', '11']:
             py_ver = 'Py3.{}'.format(ver)
             ver_code = code.format(ver=ver, loop=loop, repeat=repeat, unit=unit)
-            
-            res = subprocess.check_output(ver_code, shell=True)
-            res = res.decode('utf-8')
-
-            pat_res = re.findall(pat, res)
-            if pat_res:
-                time = pat_res[0].split(': ')[1]
-                point_obj = Point(py_ver, loop, repeat, time)
-                test_data.py_data.append(point_obj)
+            test_func(ver_code, py_ver, test_data)
 
     for key, item in data_dict.items():
         print(item)
