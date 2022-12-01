@@ -1,15 +1,36 @@
+Starting tests with loops=4 and repeat=3!!
+Initiating benchmark test_1 for Py3.6!!
+Test done in 0.000106sec!!
+Initiating benchmark test_1 for Py3.8!!
+Test done in 0.000104sec!!
+Initiating benchmark test_1 for Py3.9!!
+Test done in 9.8sec!!
+Initiating benchmark test_1 for Py3.10!!
+Test done in 0.000131sec!!
+Initiating benchmark test_1 for Py3.11!!
+Test done in 0.000111sec!!
+Initiating benchmark test_2 for Py3.6!!
+Test done in 1.05sec!!
+Initiating benchmark test_2 for Py3.8!!
+Test done in 1.05sec!!
+Initiating benchmark test_2 for Py3.9!!
+Test done in 1.05sec!!
+Initiating benchmark test_2 for Py3.10!!
+Test done in 1.16sec!!
+Initiating benchmark test_2 for Py3.11!!
+Test done in 1.03sec!!
 For TestCode: import xml.etree.ElementTree as ET;tree = ET.parse('books.xml');
- 0. Py3.6=> Loops:1, Rep:1, Time per loop:0.00213 sec
-1. Py3.8=> Loops:1, Rep:1, Time per loop:0.00294 sec
-2. Py3.9=> Loops:1, Rep:1, Time per loop:0.00245 sec
-3. Py3.10=> Loops:1, Rep:1, Time per loop:0.00456 sec
-4. Py3.11=> Loops:1, Rep:1, Time per loop:0.00352 sec
+ 0. Py3.6=> Loops:4, Rep:3, Min. Time per loop:0.000106 sec
+1. Py3.8=> Loops:4, Rep:3, Min. Time per loop:0.000104 sec
+2. Py3.9=> Loops:4, Rep:3, Min. Time per loop:9.8 sec
+3. Py3.10=> Loops:4, Rep:3, Min. Time per loop:0.000131 sec
+4. Py3.11=> Loops:4, Rep:3, Min. Time per loop:0.000111 sec
 
 For TestCode: import xml.etree.ElementTree as ET;tree = ET.parse('mega.xml');
- 0. Py3.6=> Loops:1, Rep:1, Time per loop:1.66 sec
-1. Py3.8=> Loops:1, Rep:1, Time per loop:1.61 sec
-2. Py3.9=> Loops:1, Rep:1, Time per loop:1.59 sec
-3. Py3.10=> Loops:1, Rep:1, Time per loop:1.79 sec
-4. Py3.11=> Loops:1, Rep:1, Time per loop:1.59 sec
+ 0. Py3.6=> Loops:4, Rep:3, Min. Time per loop:1.05 sec
+1. Py3.8=> Loops:4, Rep:3, Min. Time per loop:1.05 sec
+2. Py3.9=> Loops:4, Rep:3, Min. Time per loop:1.05 sec
+3. Py3.10=> Loops:4, Rep:3, Min. Time per loop:1.16 sec
+4. Py3.11=> Loops:4, Rep:3, Min. Time per loop:1.03 sec
 
-Total Time Elapsed in main: 9.324846029281616s
+Total Time Elapsed in main: 69.63068675994873s
