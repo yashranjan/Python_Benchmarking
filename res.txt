@@ -1,36 +1,36 @@
-Starting tests with loops=4 and repeat=3!!
+Starting tests with loops=8 and repeat=5!!
 Initiating benchmark test_1 for Py3.6!!
-Test done in 0.000106sec!!
+Test done in 0.0001sec!!
 Initiating benchmark test_1 for Py3.8!!
 Test done in 0.000104sec!!
 Initiating benchmark test_1 for Py3.9!!
-Test done in 9.8sec!!
+Test done in 9.88sec!!
 Initiating benchmark test_1 for Py3.10!!
 Test done in 0.000131sec!!
 Initiating benchmark test_1 for Py3.11!!
-Test done in 0.000111sec!!
+Test done in 0.000105sec!!
 Initiating benchmark test_2 for Py3.6!!
-Test done in 1.05sec!!
+Test done in 1.09sec!!
 Initiating benchmark test_2 for Py3.8!!
-Test done in 1.05sec!!
+Test done in 1.08sec!!
 Initiating benchmark test_2 for Py3.9!!
-Test done in 1.05sec!!
+Test done in 1.08sec!!
 Initiating benchmark test_2 for Py3.10!!
-Test done in 1.16sec!!
+Test done in 1.18sec!!
 Initiating benchmark test_2 for Py3.11!!
 Test done in 1.03sec!!
 For TestCode: import xml.etree.ElementTree as ET;tree = ET.parse('books.xml');
- 0. Py3.6=> Loops:4, Rep:3, Min. Time per loop:0.000106 sec
-1. Py3.8=> Loops:4, Rep:3, Min. Time per loop:0.000104 sec
-2. Py3.9=> Loops:4, Rep:3, Min. Time per loop:9.8 sec
-3. Py3.10=> Loops:4, Rep:3, Min. Time per loop:0.000131 sec
-4. Py3.11=> Loops:4, Rep:3, Min. Time per loop:0.000111 sec
+ 0. Py3.6=> Loops:8, Rep:5, Min. Time per loop:0.0001 sec
+1. Py3.8=> Loops:8, Rep:5, Min. Time per loop:0.000104 sec
+2. Py3.9=> Loops:8, Rep:5, Min. Time per loop:9.88 sec
+3. Py3.10=> Loops:8, Rep:5, Min. Time per loop:0.000131 sec
+4. Py3.11=> Loops:8, Rep:5, Min. Time per loop:0.000105 sec
 
 For TestCode: import xml.etree.ElementTree as ET;tree = ET.parse('mega.xml');
- 0. Py3.6=> Loops:4, Rep:3, Min. Time per loop:1.05 sec
-1. Py3.8=> Loops:4, Rep:3, Min. Time per loop:1.05 sec
-2. Py3.9=> Loops:4, Rep:3, Min. Time per loop:1.05 sec
-3. Py3.10=> Loops:4, Rep:3, Min. Time per loop:1.16 sec
-4. Py3.11=> Loops:4, Rep:3, Min. Time per loop:1.03 sec
+ 0. Py3.6=> Loops:8, Rep:5, Min. Time per loop:1.09 sec
+1. Py3.8=> Loops:8, Rep:5, Min. Time per loop:1.08 sec
+2. Py3.9=> Loops:8, Rep:5, Min. Time per loop:1.08 sec
+3. Py3.10=> Loops:8, Rep:5, Min. Time per loop:1.18 sec
+4. Py3.11=> Loops:8, Rep:5, Min. Time per loop:1.03 sec
 
-Total Time Elapsed in main: 69.63068675994873s
+Total Time Elapsed in main: 226.01129031181335s
